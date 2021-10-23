@@ -161,3 +161,26 @@ setencforce 0
 
 ```
 
+```shell
+[root@python opt]# vim test1.sh
+[root@python opt]# bash test1.sh 
+root--> {$6$DqCXuz/STpCnEW3u$6R0lLj..fQc1wz3p.3TlnwIPYApROG5dsKiKVzv13aMIS3KzUzbIHbv1f43ROJ.5aSBJW9MNLnFsrRG/f7EFH1::0:99999:7:::%%:*}
+brbg--> {$6$DUNYLl06XxGxRHOe$syolD/U9oVMWAD3ZK3pelBCYgwbG4CuvI0yHLpXigZWYkCP6s/h/xT7PThvZKnyXlpbnS5SgapVIGVeUPcpZi/::0:99999:7:::%%:*}
+a--> {$6$dKzFQ4XC$IywXORvxwMlNDoergDZ3YRrUqJb8LVxnpUbqNS9D4/W0gZGdoBiY7zSggpPnlgXt8UXvYSTg14k3/0N7nC0iL/:18918:0:99999:7:::%%:*}
+b--> {$6$0agMvXA.$5QzSThf7QMKJfzeV6RUB9fe9EIfbk5xj9x6Bg2SvNBt.sGbMNFyLeXLzh72bYuUvhuPqGOkVhJ.TSu4HJwJK6/:18918:0:99999:7:::%%:*}
+c--> {$6$z.xcYpzb$zo2Acjf14RvdaKP9Z0jTX8v4o59HbOraeaOwj12v4PHYceGbmRNLJJPBCrZU1dw1Vox697mTC.rXaFhAasLvn/:18918:0:99999:7:::%%:*}
+ipbrbg--> {$6$NrYEKd/i$p795h7E3AP/Va7718UVxzXNYSqn5MYBzJRrwQSNaz6frye.hE.2Xcu0lxtgjg79xcCL6o2iTyhVN/8w2bfy8i.:18921:0:99999:7:::%%:*}
+[root@python opt]# cat test1.sh 
+#!/bin/bash
+l=`sed -n '/bash$/p' /etc/passwd`
+for i in $l
+do
+    u=${i%%:*}
+    p=`grep ^$u: /etc/shadow`
+    pa=${p#*:}
+    pass={$pa%%:*}
+    echo "$u--> $pass"
+done
+
+```
+
