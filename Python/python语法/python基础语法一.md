@@ -1,4 +1,4 @@
-# python
+# python基础语法一
 
 ### python的语法结构
 
@@ -268,92 +268,11 @@ True
 
 ```
 
-```python
-if 3 > 0:
-    print('yes')
-    print('ok')
-    
-if 'to' in 'python':
-    print('True')
-else:
-    print('False')
 
-if -0.0:
-    print('任何值为0的数字都是False')
 
-if 0.001:
-    print('任何值为非0 的数字都是Ture')
 
-if ' ':
-    print('空格也是一个字符，非空字符串为Ture')
 
-if []:
-    print('任何空对象都是False')
 
-if not None:
-    print('None为False，取反为Ture')
-
-if not 0:
-    print('数字0为False，取反为Ture')
-    
-   
-a,b = 10,20
-if a<=b:
-    smaller = a
-else:
-    smaller = b
-print(smaller)
-
-a,b = 10,20
-smaller = a if a <=b else b
-print(smaller)
-```
-
-- login.py
-
-```python
-import getpass #导入getpass模块
-
-uname = input('username: ')
-upass = getpass.getpass('password: ')#调用getpass模块的getpass功能
-
-if uname == 'bob' and upass== '123456':
-    print('登陆成功')
-else:
-    print('登陆失败')
-```
-
-- grade.py
-
-```python
-score = int(input('分数： ')
-
-if score >= 90:
-    print('优秀')
-elif score >= 80:
-    print('好')
-elif score >= 70:
-    print('良')
-elif score >=60:
-    print('及格')
-else:
-    print('你得努力了！！！')
-```
-
-```python
-score = int(input('分数： '))
-
-if score >=60 and score < 70:
-    print('及格')
-elif 70 <=score < 80:
-    print(良)
-elif 80<= score <90:
-    print('好')
-elif score >= 90:
-    print('优秀')
-else:
-    print('你要努力了！！！')
-```
 
 
 
